@@ -30,13 +30,13 @@ int main()
     //Initialise paddles
     Paddle leftPaddle;
     leftPaddle.x = paddlePadding;
-    leftPaddle.y = 0.5*screenHeight - 0.5*paddleHeight;
+    leftPaddle.y = 0.5 * screenHeight - 0.5 * paddleHeight;
     leftPaddle.width = paddleWidth;
     leftPaddle.height = paddleHeight;
 
     Paddle rightPaddle; 
     rightPaddle.x = screenWidth - paddleWidth - paddlePadding; 
-    rightPaddle.y = 0.5*screenHeight - 0.5*paddleHeight;
+    rightPaddle.y = 0.5 * screenHeight - 0.5 * paddleHeight;
     rightPaddle.width = paddleWidth;
     rightPaddle.height = paddleHeight;
 
