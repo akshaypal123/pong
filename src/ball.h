@@ -1,4 +1,5 @@
 #include "raylib.h"
+#include <utility>
 
 class Ball 
 {
@@ -12,7 +13,7 @@ class Ball
         DrawCircle(x, y, radius, WHITE);
     }
 
-    void Update()
+    std::pair<int, int> Update(int cpuScore, int playerScore)
     {
         x += speedX;
         y += speedY;
@@ -21,9 +22,28 @@ class Ball
         {
             speedY = -1*speedY;
         }
-        if (x + radius >= GetScreenWidth() || x- radius <= 0)
+        if (x + radius >= GetScreenWidth())
         {
-            speedX = -1*speedX;
+            cpuScore++;
+            ResetBall();
         }
+        
+        if(x - radius <= 0) 
+        {
+            playerScore++;
+            ResetBall();
+        }
+
+        return std::make_pair(cpuScore, playerScore);
+    }
+
+    void ResetBall()
+    {
+        x = GetScreenWidth()*0.5;
+        y = GetScreenHeight()*0.5; 
+
+        int speedChoices[2] = {-1,1};
+        speedX *= speedChoices[GetRandomValue(0,1)];
+        speedY *= speedChoices[GetRandomValue(0,1)];
     }
 };
