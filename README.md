@@ -22,12 +22,39 @@ To compile the game locally, you need to follow these steps:
     - `cd pong`
 
 
-4. Compile the game:
-    - `make build`
 
+4. Compile the game:
+- On Windows:
+  ```
+  g++ -o app\pong.exe src\main.cpp -Iexternal -lraylib -lopengl32 -lgdi32 -lwinmm -static -std=c++11
+  ```
+
+- On macOS:
+  ```
+  g++ -o app/pong src/main.cpp -Iexternal -lraylib -framework OpenGL -framework Cocoa -framework IOKit -framework CoreVideo -std=c++11
+  ```
+
+- On Linux:
+  ```
+  g++ -o app/pong pong.cpp -Iexternal -lraylib -lGL -lm -lpthread -ldl -lrt -std=c++11
+  ```
 
 5. Run the game:
-    - `make run`
+- On Windows:
+  ```
+  .\app\pong.exe
+  ```
+
+- On macOS and Linux:
+  ```
+  ./app/pong
+  ```
+
+## Acknowledgements
+
+This game is based on the classic Pong game and was created using the raylib library.
+
+
 
 ## Acknowledgements
 
