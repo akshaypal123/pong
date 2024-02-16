@@ -55,9 +55,3 @@ To compile the game locally, you need to follow these steps:
 This game is based on the classic Pong game and was created using the raylib library.
 
 
-
-## Acknowledgements
-
-This game is based on the classic Pong game and was created using the raylib library.
-
-
