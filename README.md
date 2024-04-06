@@ -36,7 +36,7 @@ To compile the game locally, you need to follow these steps:
 
 - On Linux:
   ```
-  g++ -o pong pong.cpp -Iexternal -lraylib -lGL -lm -lpthread -ldl -lrt -std=c++11
+  g++ -o pong src/main.cpp -Iexternal -lraylib -lGL -lm -lpthread -ldl -lrt -std=c++11
   ```
 
 5. Run the game:
